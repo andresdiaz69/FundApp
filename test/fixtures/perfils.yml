@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  id_perfil: 
+  descripcion_perfil: MyString
+  activo: 
+
+two:
+  id_perfil: 
+  descripcion_perfil: MyString
+  activo: 

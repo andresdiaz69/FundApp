@@ -1,0 +1,23 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  id_actividad: 
+  titulo: MyString
+  id_fundacion: 
+  descripcion: MyText
+  puntos: 
+  fecha_inicio: 2018-08-10 19:46:11
+  fecha_fin: 2018-08-10 19:46:11
+  activo: MyString
+  bool: MyString
+
+two:
+  id_actividad: 
+  titulo: MyString
+  id_fundacion: 
+  descripcion: MyText
+  puntos: 
+  fecha_inicio: 2018-08-10 19:46:11
+  fecha_fin: 2018-08-10 19:46:11
+  activo: MyString
+  bool: MyString

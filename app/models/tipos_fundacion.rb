@@ -1,0 +1,2 @@
+class TiposFundacion < ApplicationRecord
+end

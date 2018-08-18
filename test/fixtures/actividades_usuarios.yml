@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  id_usuario: 
+  id_actividad: 
+  puntos: 
+  fecha: 2018-08-10 19:47:05
+
+two:
+  id_usuario: 
+  id_actividad: 
+  puntos: 
+  fecha: 2018-08-10 19:47:05

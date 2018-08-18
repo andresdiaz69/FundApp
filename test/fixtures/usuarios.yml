@@ -1,0 +1,25 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  id_usuario: 
+  nombre: MyString
+  apellido: MyString
+  cedula: MyString
+  id_rol: 
+  email: MyString
+  password: MyString
+  activo: 
+  puntos: 
+  id_fundacion: 
+
+two:
+  id_usuario: 
+  nombre: MyString
+  apellido: MyString
+  cedula: MyString
+  id_rol: 
+  email: MyString
+  password: MyString
+  activo: 
+  puntos: 
+  id_fundacion: 

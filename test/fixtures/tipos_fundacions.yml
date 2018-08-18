@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  id_tipo: 
+  nombre: MyString
+  descripcion: MyString
+  activo: 
+
+two:
+  id_tipo: 
+  nombre: MyString
+  descripcion: MyString
+  activo: 

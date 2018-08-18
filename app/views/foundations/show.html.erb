@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @foundation.title %>
+</p>
+
+<p>
+  <strong>Body:</strong>
+  <%= @foundation.body %>
+</p>
+
+<p>
+  <strong>Count:</strong>
+  <%= @foundation.count %>
+</p>
+
+<%= link_to 'Edit', edit_foundation_path(@foundation) %> |
+<%= link_to 'Back', foundations_path %>

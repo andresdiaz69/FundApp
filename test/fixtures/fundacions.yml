@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  id_fundacion: 
+  nombre: MyString
+  nit: MyString
+  id_tipo: 
+  activo: MyString
+  bool: MyString
+
+two:
+  id_fundacion: 
+  nombre: MyString
+  nit: MyString
+  id_tipo: 
+  activo: MyString
+  bool: MyString

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>MiApp</title>
+    <%= csrf_meta_tags %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+  <div class="container">
+    <%= yield %>
+    <p class="notice"><%= notice%></p>
+    <p class="alert"><%= alert%></p>
+    <ul class="nav justify-content-end">
+    <%- if user_signed_in? %> <%# validamos si hay usuario registrado%>
+    <li class="nav-item">
+    Hola: <%= current_user.email%>
+</li>
+        <li class="nav-item">
+             <%= link_to 'Salir', destroy_user_session_path, method: :delete %>
+        </li>
+     <% else %> <%# si no lo esta mostramos los botones de inicio y registro%>
+         <li class="nav-item">
+              <%= link_to 'Iniciar Sesión', new_user_session_path %>
+         </li>
+         <li class="nav-item">
+              <%= link_to 'Registrar', new_user_registration_path %>
+         </li>
+    <% end %>
+</ul>
+
+
+  </div> 
+  </body>
+</html>

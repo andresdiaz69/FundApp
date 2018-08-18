@@ -1,0 +1,2 @@
+class PerfilRol < ApplicationRecord
+end
