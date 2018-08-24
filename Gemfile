@@ -9,7 +9,7 @@ end
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.1.6'
 # Use sqlite3 as the database for Active Record
-gem 'sqlite3'
+# gem 'sqlite3'
 # Use Puma as the app server
 gem 'puma', '~> 3.7'
 # Use SCSS for stylesheets
@@ -33,13 +33,13 @@ gem 'jbuilder', '~> 2.5'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
+# Customized
 gem 'jquery-rails'
-
 gem 'bootstrap'
-
 gem 'pg'
-
 gem 'devise'
+# gem 'rails-i18n'
+# gem 'devise_roles', '~> 0.3.0'  #ejeutar gem install devise_roles
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console

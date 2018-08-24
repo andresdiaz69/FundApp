@@ -10,91 +10,49 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180818003224) do
+ActiveRecord::Schema.define(version: 20180824131319) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "actividades_usuarios", force: :cascade do |t|
-    t.integer "id_usuario"
-    t.integer "id_actividad"
-    t.integer "puntos"
-    t.datetime "fecha"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  create_table "actividads", force: :cascade do |t|
-    t.integer "id_actividad"
-    t.string "titulo"
-    t.integer "id_fundacion"
-    t.text "descripcion"
-    t.integer "puntos"
-    t.datetime "fecha_inicio"
-    t.datetime "fecha_fin"
-    t.string "activo"
-    t.string "bool"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  create_table "articles", force: :cascade do |t|
+  create_table "events", force: :cascade do |t|
     t.string "title"
-    t.text "body"
-    t.integer "count"
+    t.string "description"
+    t.integer "poitns"
+    t.datetime "initial_date"
+    t.datetime "final_date"
+    t.integer "active"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "foundation_types", force: :cascade do |t|
+    t.string "name"
+    t.string "description"
+    t.integer "active"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
   create_table "foundations", force: :cascade do |t|
-    t.string "title"
-    t.text "body"
-    t.integer "count"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  create_table "fundacions", force: :cascade do |t|
-    t.integer "id_fundacion"
-    t.string "nombre"
+    t.string "name"
     t.string "nit"
-    t.integer "id_tipo"
-    t.string "activo"
-    t.string "bool"
+    t.integer "active"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
-  create_table "perfil_rols", force: :cascade do |t|
-    t.integer "id_perfil"
-    t.integer "id_rol"
-    t.integer "activo"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  create_table "perfils", force: :cascade do |t|
-    t.integer "id_perfil"
-    t.string "descripcion_perfil"
-    t.integer "activo"
+  create_table "profiles", force: :cascade do |t|
+    t.string "description"
+    t.integer "active"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
   create_table "roles", force: :cascade do |t|
-    t.integer "descripcion"
-    t.string "nombre_rol"
-    t.string "descripcion_rol"
-    t.integer "activo"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  create_table "tipos_fundacions", force: :cascade do |t|
-    t.integer "id_tipo"
-    t.string "nombre"
-    t.string "descripcion"
-    t.integer "activo"
+    t.string "name"
+    t.string "description"
+    t.integer "active"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -102,29 +60,24 @@ ActiveRecord::Schema.define(version: 20180818003224) do
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
-    t.string "reset_password_token"
-    t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
-    t.string "nameNAME"
+    t.integer "sign_in_count", default: 0, null: false
+    t.datetime "current_sign_in_at"
+    t.datetime "last_sign_in_at"
+    t.inet "current_sign_in_ip"
+    t.inet "last_sign_in_ip"
+    t.integer "failed_attempts", default: 0, null: false
+    t.string "unlock_token"
+    t.datetime "locked_at"
+    t.string "first_name"
+    t.string "last_name"
+    t.string "identification"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.bigint "role_id"
     t.index ["email"], name: "index_users_on_email", unique: true
-    t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
+    t.index ["role_id"], name: "index_users_on_role_id"
   end
 
-  create_table "usuarios", force: :cascade do |t|
-    t.integer "id_usuario"
-    t.string "nombre"
-    t.string "apellido"
-    t.string "cedula"
-    t.integer "id_rol"
-    t.string "email"
-    t.string "password"
-    t.integer "activo"
-    t.integer "puntos"
-    t.integer "id_fundacion"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
+  add_foreign_key "users", "roles"
 end

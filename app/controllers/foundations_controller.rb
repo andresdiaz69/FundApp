@@ -1,6 +1,5 @@
 class FoundationsController < ApplicationController
   before_action :set_foundation, only: [:show, :edit, :update, :destroy]
-  before_action :authenticate_user!, only:[:new]
 
   # GET /foundations
   # GET /foundations.json
@@ -70,6 +69,6 @@ class FoundationsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def foundation_params
-      params.require(:foundation).permit(:title, :body, :count)
+      params.require(:foundation).permit(:name, :nit, :active)
     end
 end
