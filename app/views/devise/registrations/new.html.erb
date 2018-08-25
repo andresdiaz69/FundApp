@@ -22,7 +22,7 @@
   </div>
 
   <div class="field">
-    <%= f.select :role_id, Role.all.collect { |p| [p.name, p.id] } , {:include_blank => "Seleccione"} %>
+    <%= f.select :role_id, Role.all.collect { |p| [p.name, p.id] } , {:include_blank => "Seleccione"}%>
   </div>
 
   <div class="actions">

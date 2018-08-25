@@ -6,5 +6,7 @@ class User < ApplicationRecord
 
   # attr_accessible :email, :password, :password_confirmation, :remember_me, :role_attributes
   has_one :role
-  accepts_nested_attributes_for :role       
+  accepts_nested_attributes_for :role  
+  
+  validates :role_id, presence: true
 end
