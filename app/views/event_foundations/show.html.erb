@@ -1,0 +1,39 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @event_foundation.title %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @event_foundation.description %>
+</p>
+
+<p>
+  <strong>Points:</strong>
+  <%= @event_foundation.points %>
+</p>
+
+<p>
+  <strong>Initialdate:</strong>
+  <%= @event_foundation.initialDate %>
+</p>
+
+<p>
+  <strong>Finaldate:</strong>
+  <%= @event_foundation.finalDate %>
+</p>
+
+<p>
+  <strong>Active:</strong>
+  <%= @event_foundation.active %>
+</p>
+
+<p>
+  <strong>Foundation:</strong>
+  <%= @event_foundation.foundation %>
+</p>
+
+<%= link_to 'Edit', edit_event_foundation_path(@event_foundation) %> |
+<%= link_to 'Back', event_foundations_path %>

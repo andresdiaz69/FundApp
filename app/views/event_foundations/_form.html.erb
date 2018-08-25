@@ -1,0 +1,52 @@
+<%= form_with(model: event_foundation, local: true) do |form| %>
+  <% if event_foundation.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(event_foundation.errors.count, "error") %> prohibited this event_foundation from being saved:</h2>
+
+      <ul>
+      <% event_foundation.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :title %>
+    <%= form.text_field :title, id: :event_foundation_title %>
+  </div>
+
+  <div class="field">
+    <%= form.label :description %>
+    <%= form.text_field :description, id: :event_foundation_description %>
+  </div>
+
+  <div class="field">
+    <%= form.label :points %>
+    <%= form.number_field :points, id: :event_foundation_points %>
+  </div>
+
+  <div class="field">
+    <%= form.label :initialDate %>
+    <%= form.datetime_select :initialDate, id: :event_foundation_initialDate %>
+  </div>
+
+  <div class="field">
+    <%= form.label :finalDate %>
+    <%= form.datetime_select :finalDate, id: :event_foundation_finalDate %>
+  </div>
+
+  <div class="field">
+    <%= form.label :active %>
+    <%= form.number_field :active, id: :event_foundation_active %>
+  </div>
+
+  <div class="field">
+    <%= form.label :foundation_id %>
+    <%= form.text_field :foundation_id, id: :event_foundation_foundation_id %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Event foundation:</strong>
+  <%= @event_user.event_foundation %>
+</p>
+
+<p>
+  <strong>User:</strong>
+  <%= @event_user.user %>
+</p>
+
+<p>
+  <strong>Points:</strong>
+  <%= @event_user.points %>
+</p>
+
+<p>
+  <strong>Dateevent:</strong>
+  <%= @event_user.dateEvent %>
+</p>
+
+<%= link_to 'Edit', edit_event_user_path(@event_user) %> |
+<%= link_to 'Back', event_users_path %>

@@ -8,6 +8,7 @@
       <th>Name</th>
       <th>Nit</th>
       <th>Active</th>
+      <th>Foundation type</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -18,6 +19,7 @@
         <td><%= foundation.name %></td>
         <td><%= foundation.nit %></td>
         <td><%= foundation.active %></td>
+        <td><%= foundation.foundation_type %></td>
         <td><%= link_to 'Show', foundation %></td>
         <td><%= link_to 'Edit', edit_foundation_path(foundation) %></td>
         <td><%= link_to 'Destroy', foundation, method: :delete, data: { confirm: 'Are you sure?' } %></td>

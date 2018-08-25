@@ -1,0 +1,39 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Event Foundations</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th>Description</th>
+      <th>Points</th>
+      <th>Initialdate</th>
+      <th>Finaldate</th>
+      <th>Active</th>
+      <th>Foundation</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @event_foundations.each do |event_foundation| %>
+      <tr>
+        <td><%= event_foundation.title %></td>
+        <td><%= event_foundation.description %></td>
+        <td><%= event_foundation.points %></td>
+        <td><%= event_foundation.initialDate %></td>
+        <td><%= event_foundation.finalDate %></td>
+        <td><%= event_foundation.active %></td>
+        <td><%= event_foundation.foundation %></td>
+        <td><%= link_to 'Show', event_foundation %></td>
+        <td><%= link_to 'Edit', edit_event_foundation_path(event_foundation) %></td>
+        <td><%= link_to 'Destroy', event_foundation, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Event Foundation', new_event_foundation_path %>

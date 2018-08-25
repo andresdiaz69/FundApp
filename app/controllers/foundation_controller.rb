@@ -1,2 +1,0 @@
-class FoundationController < ApplicationController
-end

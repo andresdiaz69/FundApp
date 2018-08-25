@@ -38,7 +38,7 @@ gem 'jquery-rails'
 gem 'bootstrap'
 gem 'pg'
 gem 'devise'
-# gem 'rails-i18n'
+gem 'rails-i18n'
 # gem 'devise_roles', '~> 0.3.0'  #ejeutar gem install devise_roles
 
 group :development, :test do
