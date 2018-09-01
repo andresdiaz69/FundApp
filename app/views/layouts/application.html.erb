@@ -8,30 +8,134 @@
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
+  <body id="page-top">
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
+      <div class="container">
+        <a class="navbar-brand js-scroll-trigger" href="#page-top">FundApp</a>
+        <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+          Menu
+          <i class="fa fa-bars"></i>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+              <a class="nav-link js-scroll-trigger" href="#download">Download</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link js-scroll-trigger" href="#features">Features</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link js-scroll-trigger" href="#contact">Contact</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="Login.html">Login</a>
+              </li>
+          </ul>
+          <ul class="navbar-light bg-light">
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Fundaciones
+              </a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <%= link_to "Fundaciones", '/foundations', { :class=>"dropdown-item" } %>
+                <div class="dropdown-divider"></div>
+                <%= link_to "Tipos de Fundaciones", '/foundation_types', { :class=>"dropdown-item" }  %>
+                <%= link_to "Eventos Fundación", '/event_foundations', { :class=>"dropdown-item" } %>
+                <%= link_to "Eventos por Usuarios", '/event_users', { :class=>"dropdown-item" } %>
+                <div class="dropdown-divider"></div>
+                <%= link_to "Roles por Perfiles", '/profile_roles', { :class=>"dropdown-item" } %>
+                <%= link_to "Perfiles", '/profiles', { :class=>"dropdown-item" } %>
+                <%= link_to "Roles", '/roles', { :class=>"dropdown-item" } %>
+              </div>
+            </li>
+        </ul>
+        </div>
+      </div>
+    </nav>
+
+    <header class="masthead">
+    
+    </header>
+
+
+  </body>
+</html>
+
+
+
+<!-- <!DOCTYPE html>
+<html>
+  <head>
+    <title>MiApp</title>
+    <%= csrf_meta_tags %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
   <body>
   <div class="container">
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto navbar-light bg-light">
+
+      
+          <li  class="nav-link navbar-brand"><%= link_to "Home", '/'  %></li>
+          <li  class="nav-item navbar-brand"><%= link_to "Fundaciones", '/foundations'  %></li>
+          <li  class="nav-item nav-link navbar-brand"><%= link_to "Tipos de Fundaciones", '/foundation_types'  %></li>
+          <li  class="nav-link disabled"><%= link_to "Eventos Fundación", '/event_foundations'  %></li>
+          <li  class="nav-item nav-link navbar-brand ">
+              <a class="nav-link"><%= link_to "Eventos por Usuarios", '/event_users'  %></a>
+          </li>
+
+
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              Fundaciones
+            </a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+              
+              <%= link_to "Fundaciones", '/foundations', { :class=>"dropdown-item" } %>
+              <div class="dropdown-divider"></div>
+              <%= link_to "Tipos de Fundaciones", '/foundation_types', { :class=>"dropdown-item" }  %>
+              <%= link_to "Eventos Fundación", '/event_foundations', { :class=>"dropdown-item" } %>
+              <%= link_to "Eventos por Usuarios", '/event_users', { :class=>"dropdown-item" } %>
+              <div class="dropdown-divider"></div>
+              <%= link_to "Roles por Perfiles", '/profile_roles', { :class=>"dropdown-item" } %>
+              <%= link_to "Perfiles", '/profiles', { :class=>"dropdown-item" } %>
+              <%= link_to "Roles", '/roles', { :class=>"dropdown-item" } %>
+              
+        
+            </div>
+        </li>
+        </ul>
+      </div>
+    </nav>
     <%= yield %>
     <p class="notice"><%= notice%></p>
     <p class="alert"><%= alert%></p>
+    
     <ul class="nav justify-content-end">
-    <%- if user_signed_in? %> <%# validamos si hay usuario registrado%>
-    <li class="nav-item">
-    Hola: <%= current_user.email%>
-</li>
-        <li class="nav-item">
-             <%= link_to 'Salir', destroy_user_session_path, method: :delete %>
-        </li>
-     <% else %> <%# si no lo esta mostramos los botones de inicio y registro%>
-         <li class="nav-item">
-              <%= link_to 'Iniciar Sesión', new_user_session_path %>
-         </li>
-         <li class="nav-item">
-              <%= link_to 'Registrar', new_user_registration_path %>
-         </li>
-    <% end %>
-</ul>
+        <%- if user_signed_in? %> <%# validamos si hay usuario registrado%>
+            <li class="nav-item">
+              Hola: <%= current_user.email%>
+            </li>
+            <li class="nav-item">
+                <%= link_to 'Salir', destroy_user_session_path, method: :delete %>
+            </li>
+        <% else %> <%# si no lo esta mostramos los botones de inicio y registro%>
+            <li class="nav-item">
+                  <%= link_to 'Iniciar Sesión', new_user_session_path %>
+            </li>
+            <li class="nav-item">
+                  <%= link_to 'Registrar', new_user_registration_path %>
+            </li>
+      <% end %>
+    </ul>
 
 
   </div> 
   </body>
-</html>
+</html>--!>
